@@ -114,9 +114,9 @@ function createNews(title, date, firstParagraph, secondParagraph, thirdParagraph
   secondSection.textContent = secondParagraph;
   thirdSection.textContent = thirdParagraph;
 
-  button.addEventListener('click', event => {
-   //ENTER CODE HERE LATER YOU DUMMY
-  })
+  article.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  });
 
   return article;
 }
