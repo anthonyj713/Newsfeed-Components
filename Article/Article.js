@@ -88,6 +88,48 @@ const data = [
   }
 ];
 
+function createNews(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  let article = document.createElement('div');
+  let titleArticle = document.createElement('h2');
+  let dateArticle = document.createElement('p');
+  let firstSection = document.createElement('p');
+  let secondSection = document.createElement('p')
+  let thirdSection = document.createElement('p');
+  let button = document.createElement('span');
+
+  article.append(titleArticle);
+  article.append(dateArticle);
+  article.append(firstSection);
+  article.append(secondSection);
+  article.append(thirdSection);
+  article.append(button);
+
+  article.classList.add('article');
+  dateArticle.classList.add('date');
+  button.classList.add('expandButton'); 
+
+  titleArticle.textContent = title;
+  dateArticle.textContent = date;
+  firstSection.textContent = firstParagraph;
+  secondSection.textContent = secondParagraph;
+  thirdSection.textContent = thirdParagraph;
+
+  button.addEventListener('click', event => {
+   //ENTER CODE HERE LATER YOU DUMMY
+  })
+
+  return article;
+}
+
+let articles = document.querySelector('.articles');
+
+data.map( i => {
+  articles.append(createNews(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph))
+})
+
+
+
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
@@ -107,7 +149,7 @@ const data = [
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
